@@ -26,15 +26,7 @@
                             <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
                             <li class="nav-item"><a class="nav-link" href="chat.html">Konselor</a></li>
                             <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">service</a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                    <li><a class="dropdown-item" href="quiz.html">Food recommendation system</a></li>
-                                    <li><a class="dropdown-item" href="quiz.html">Mental health assesmen</a></li>
-                                    <li><a class="dropdown-item" href="pricing.html">Order medicine</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Feedback</a></li>
                         </ul>
                     </div>
                     <a href="login.html" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span> Sign In</a>
@@ -49,7 +41,7 @@
                                 <h1 class="display-5 fw-bolder text-white mb-2">TELIFE</h1>
                                 <p class="lead fw-normal text-white-50 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Pesan Sesi Konsultasi</a>
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="chat.html">Pesan Sesi Konsultasi</a>
                                     <a class="btn btn-outline-light btn-lg px-4" href="#!">learn more</a>
                                 </div>
                             </div>
@@ -65,43 +57,73 @@
                         <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Services For You</h2></div>
                         <div class="col-lg-8">
                             <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                                    <h2 class="h5">Food Recommendation</h2>
-                                    <p class="mb-0">have a food recommendation based on your weight, height, disease history </p>
+                                <div class="card text-center" style="width: 25rem; margin-right: 1rem;">
+                                    <div class="col mb-5 h-100">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                        <h2 class="h5">Food Recommendation</h2>
+                                        <p class="card-text">have a food recommendation based on your weight, height, disease history </p>
+                                        <a href="quiz.html" class="align-self-end btn btn btn-primary " style="margin-top: auto;">Explore More</a>
+                                    </div>
                                 </div>
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                                    <h2 class="h5">mental health assesmen</h2>
-                                    <p class="mb-0">get Your stress level by one click away</p>
+                                <div class="card text-center" style="width: 25rem;">
+                                    <div class="col mb-5 h-100">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                        <h2 class="h5">Mood tracking</h2>
+                                        <p class="card-text">a journal for you to Keep tracking about how you feel every single day</p> 
+                                        <button type="button" class="align-self-end btn btn-primary" style="margin-top: auto;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Explore More
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">order medicine via online</h2>
-                                    <p class="mb-0">consult with doctor, and get your recommended medicine and vitamin right after</p>
+                                <div class="card text-center" style="width: 25rem; margin-right: 1rem;">
+                                    <div class="col mb-5 h-100">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                        <h2 class="h5">Mental Health Assesmen</h2>
+                                        <p class="card-text">take an assesmen and get your stress level by one click away</p>
+                                        <a href="quiz.html" class="align-self-end btn btn btn-primary " style="margin-top: auto;">Explore More</a>
+                                    </div>
                                 </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                                    <h2 class="h5">Mood tracking system</h2>
-                                    <p class="mb-0">a journal for you to Keep tracking about how you feel every single day. you might wanna read it in the future</p>
+                                <div class="card text-center" style="width: 25rem;">
+                                    <div class="col mb-5 h-100">
+                                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                        <h2 class="h5">Order medicine online</h2>
+                                        <p class="card-text">consult with doctor, and get your recommended medicine and vitamin right after</p>
+                                        <a href="pricing.html" class="align-self-end btn btn btn-primary " style="margin-top: auto;">Explore More</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Mood tracing system -->
-            <div class="container d-flex justify-content-center">
-                <div class="card w-75" style="margin-bottom: 30px; background-color: #CED4D9;">
-                    <div class="d-flex flex-row justify-content-between p-3 adiv text-white"> <i class="fas fa-chevron-left"></i>  <i class="fas fa-times"></i> </div>
-                    <div class="mt-2 p-4 text-center">
-                        <h4 class="mb-0">Tracking your Mood Every Single Day</h4> <p style="font-size: 14px;">Let us know about how you feel today.</p>
-                        <div class="d-flex flex-row justify-content-center mt-2"> <img src="https://img.icons8.com/emoji/48/000000/angry-face-emoji--v2.png" /> <img src="https://img.icons8.com/fluent/48/000000/sad.png" /> <img src="https://img.icons8.com/color/48/000000/happy.png" /> <img src="https://img.icons8.com/emoji/48/000000/smiling-face.png" /> <img src="https://img.icons8.com/color/48/000000/lol.png" /> </div>
-                        <div class="form-group mt-4"> <textarea class="form-control" rows="4" placeholder="Write a note"></textarea> </div>
-                        <div class="mt-4"> <button type="button" class="btn btn-primary btn-block"><span>Save Today's Mood</span></button> </div>
+
+            <!-- Mood tracing system (IN MODAL)-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container d-flex justify-content-center">
+                                <div class="card w-75" style="margin-bottom: 30px; background-color: #ffffff;">
+                                    <div class="d-flex flex-row justify-content-between p-3 adiv text-white"></div>
+                                    <div class="mt-2 p-4 text-center">
+                                        <h4 class="mb-0">Tracking your Mood Every Single Day</h4> <p style="font-size: 14px;">Let us know about how you feel today.</p>
+                                        <div class="d-flex flex-row justify-content-center mt-2"> <img src="https://img.icons8.com/emoji/48/000000/angry-face-emoji--v2.png" /> <img src="https://img.icons8.com/fluent/48/000000/sad.png" /> <img src="https://img.icons8.com/color/48/000000/happy.png" /> <img src="https://img.icons8.com/emoji/48/000000/smiling-face.png" /> <img src="https://img.icons8.com/color/48/000000/lol.png" /> </div>
+                                        <div class="form-group mt-4"> <textarea class="form-control" rows="4" placeholder="Write a note" style="background-color: #f5faff;"></textarea> </div>
+                                        <div class="mt-4"> <button type="button" class="btn btn-primary btn-block"><span>Save Today's Mood</span></button> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <div class="mt-4"> <button type="button" class="btn btn-primary btn-block"><span>Save Today's Mood</span></button> </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
+
             <!-- Testimonial section-->
             <div class="py-5 bg-light">
                 <div class="container px-5 my-5">
