@@ -83,6 +83,4 @@ class Recommender:
             recommended_products.append(temp)
 
         return recommended_products
-        
-    
 
