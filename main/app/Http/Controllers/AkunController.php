@@ -77,11 +77,13 @@ class AkunController extends Controller
     public function index(){
         
         return view('login');
-        // return view('login', [
-        //     'title' => 'Login',
-        //     'method' => 'POST',
-        //     'action' => "loginpost"
-        //     ]);
+    }
+
+    public function put_session($data) {
+        Session::put('akun_id',$data->akun_id);
+        Session::put('is_konselor',$data->is_konselor);
+        Session::put('is_admin',$data->is_admin);
+        Session::put('login',TRUE);
     }
 
     public function loginPost(Request $request){
@@ -90,10 +92,7 @@ class AkunController extends Controller
         $data = Akun::where('username','=',$username)->first();
         if($data){ 
             if(strcmp($password,$data->password)==0){
-                Session::put('akun_id',$data->akun_id);
-                Session::put('is_konselor',$data->is_konselor);
-                Session::put('is_admin',$data->is_admin);
-                Session::put('login',TRUE);
+                $this->put_session($data);
                 if($data->is_konselor){
                     return redirect('consulRecord');
                 } else if($data->is_admin){
