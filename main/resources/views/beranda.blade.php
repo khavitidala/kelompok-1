@@ -120,6 +120,7 @@
                             <li class="nav-item"><a class="nav-link" href="about">Tentang Kami</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact">Feedback</a></li>
                             <li class="nav-item"><a class="nav-link" href="profile">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="obatPricing">Order Obat</a></li>
                         </ul>
                     </div>
                     <a href="login" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span> Sign In</a>
@@ -161,6 +162,19 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood tracing system -->
+            <div class="container d-flex justify-content-center" style="margin-top: 3%;">
+                <div class="card w-75" style="margin-bottom: 30px; background-color: #CED4D9;">
+                    <div class="d-flex flex-row justify-content-between p-3 adiv text-white"> <i class="fas fa-chevron-left"></i>  <i class="fas fa-times"></i> </div>
+                    <div class="mt-2 p-4 text-center">
+                        <h4 class="mb-0">Tracking your Mood Every Single Day</h4> <p style="font-size: 14px;">Let us know about how you feel today.</p>
+                        <div class="d-flex flex-row justify-content-center mt-2"> <img src="https://img.icons8.com/emoji/48/000000/angry-face-emoji--v2.png" /> <img src="https://img.icons8.com/fluent/48/000000/sad.png" /> <img src="https://img.icons8.com/color/48/000000/happy.png" /> <img src="https://img.icons8.com/emoji/48/000000/smiling-face.png" /> <img src="https://img.icons8.com/color/48/000000/lol.png" /> </div>
+                        <div class="form-group mt-4"> <textarea class="form-control" rows="4" placeholder="Write a note"></textarea> </div>
+                        <div class="mt-4"> <button type="button" class="btn btn-primary btn-block"><span>Save Today's Mood</span></button> </div>
                     </div>
                 </div>
             </div>

@@ -32,10 +32,17 @@ class AkunController extends Controller
     public function faq() {
         return view('faq');
     }
+    public function obatPricing() {
+        return view('obatPricing');
+    }
+    public function obatCheckout() {
+        return view('obatCheckout');
+    }
 
     public function create_record() {
         return view('consulRecord_create');
     }
+    
 
     public function register()
     {

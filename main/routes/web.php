@@ -21,6 +21,8 @@ Route::get('/contact',"App\Http\Controllers\AkunController@contact")->name("cont
 Route::get('/news',"App\Http\Controllers\AkunController@getNews")->name("getNews");
 Route::get('/chat',"App\Http\Controllers\AkunController@chat")->name("chat");
 Route::get('/faq',"App\Http\Controllers\AkunController@about")->name("faq");
+Route::get('/obatPricing',"App\Http\Controllers\AkunController@obatPricing")->name("obatPricing");
+Route::get('/obatCheckout',"App\Http\Controllers\AkunController@obatCheckout")->name("obatCheckout");
 Route::get('/consulRecord/create',"App\Http\Controllers\AkunController@create_record")->name("create_record");
 Route::get('/consulRecord',"App\Http\Controllers\KonsultasiRecordController@index")->name("consulRecord");
 Route::post('/consulRecord',"App\Http\Controllers\KonsultasiRecordController@store")->name("store_consulRecord");
