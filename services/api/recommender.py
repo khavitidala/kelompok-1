@@ -9,7 +9,7 @@ from sklearn.neighbors import NearestNeighbors
 NUT_DAILY_VALUES = {
     "calories": 2000,
     "carbohydrates": 300,
-    "cholesterol": 0.003,
+    "cholestrol": 0.003,
     "fat" : 65,
     "fiber": 25,
     "proteins": 50
@@ -18,7 +18,7 @@ NUT_DAILY_VALUES = {
 NUT_NAMES_MAP = {
     "calories" : "energy",
     "carbohydrates": "carbo",
-    "cholesterol": "cholesterol",
+    "cholestrol": "cholestrol",
     "fat" : "fat",
     "fiber": "fiber",
     "proteins": "protein"
@@ -61,7 +61,7 @@ class Recommender:
                 (NUT_DAILY_VALUES["proteins"] - proteins) / NUT_DAILY_VALUES["proteins"] ,
                 (NUT_DAILY_VALUES["fat"] - fat) / NUT_DAILY_VALUES["fat"],
                 (NUT_DAILY_VALUES["fiber"] - fiber),
-                (NUT_DAILY_VALUES["cholesterol"] - cholesterol)]]
+                (NUT_DAILY_VALUES["cholestrol"] - cholesterol)]]
         
         return inp
 
