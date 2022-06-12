@@ -1,18 +1,16 @@
 import pandas as pd
-import numpy as np
 
 from copy import deepcopy
 from api.models import Food
-from scipy.spatial import distance
 from sklearn.neighbors import NearestNeighbors
 
 NUT_DAILY_VALUES = {
-    "calories": 2000,
-    "carbohydrates": 300,
-    "cholestrol": 0.003,
-    "fat" : 65,
-    "fiber": 25,
-    "proteins": 50
+    "calories": (71.461, 477.044),
+    "carbohydrates": (82.22, 0.43),
+    "proteins": (36.36, 0.333),
+    "fat" : (27.59333333, 0.798),
+    "fiber": (18.33333333, 0),
+    "cholestrol": (0.761, 0),
 }
 
 NUT_NAMES_MAP = {
@@ -24,6 +22,8 @@ NUT_NAMES_MAP = {
     "proteins": "protein"
 }
 
+ORDER_MAP = ["energy", "carbo", "protein",	"fat", "fiber", "cholestrol"]
+
 class Recommender:
 
     def __init__(self, input_data):
@@ -32,42 +32,36 @@ class Recommender:
 
     def get_data_from_db(self):
         food = Food.objects.all()
-        return food.query.values()
+        return food.values()
     
     def get_converted_data(self):
-        data = self.get_data_from_db(self)
+        data = self.get_data_from_db()
         self.df = pd.DataFrame.from_records(data)
 
         return deepcopy(self.df)
     
-    def normalize_df(self):
-        df = self.get_converted_data()
+    def normalize_df(self, df=None):
+        if df is None:
+            df = self.get_converted_data()
         for key, val in NUT_DAILY_VALUES.items():
             column = NUT_NAMES_MAP[key]
-            df[column] /= val
-            df[column] *= 2
+            df[column] -= val[0]
+            df[column] /= val[1] - val[0]
         
         return df
 
     def input_data_helper(self):
-        calories = float(self.input_data['energy'])
-        cholesterol = float(self.input_data['cholestrol'])
-        carbohydrates = float(self.input_data['carbo'])
-        fat = float(self.input_data['fat'])
-        fiber = float(self.input_data['fiber'])
-        proteins = float(self.input_data['protein'])
-        inp = [[(NUT_DAILY_VALUES["calories"] - calories) / NUT_DAILY_VALUES["calories"], 
-                (NUT_DAILY_VALUES["carbohydrates"] - carbohydrates) / NUT_DAILY_VALUES["carbohydrates"] ,
-                (NUT_DAILY_VALUES["proteins"] - proteins) / NUT_DAILY_VALUES["proteins"] ,
-                (NUT_DAILY_VALUES["fat"] - fat) / NUT_DAILY_VALUES["fat"],
-                (NUT_DAILY_VALUES["fiber"] - fiber),
-                (NUT_DAILY_VALUES["cholestrol"] - cholesterol)]]
+        input_data = self.normalize_df(df=self.input_data)
+        inp = []
+        for key in ORDER_MAP:
+            inp.append(input_data[key])
         
-        return inp
+        return [inp]
 
     def recommender(self):
         nutrition_df = self.get_converted_data()
-        nutrition_values_df = self.normalize_df()
+        nutrition_values_df = deepcopy(self.normalize_df())
+        nutrition_values_df.drop(['id', 'nama', 'sugar', 'pic_url'], axis=1, inplace=True)
         
         knn = NearestNeighbors(n_neighbors=5,
                             algorithm='ball_tree',
@@ -78,7 +72,7 @@ class Recommender:
         recommended_products = []
         for i in indices[0]:
             temp = {}
-            temp['product_name'] = nutrition_df.loc[i]['product_name']
+            temp['nama'] = nutrition_df.loc[i]['nama']
             temp['pic_url'] = nutrition_df.loc[i]['pic_url']
             recommended_products.append(temp)
 
