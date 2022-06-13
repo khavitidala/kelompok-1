@@ -11,6 +11,8 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -37,8 +39,65 @@
                     <a href="logout" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>Logout</a>
                 </div>
             </nav>
-    <!-- Page Content-->
-    <section>
+
+            <!-- Mood tracing system -->
+            <div class="container d-flex justify-content-center" style="margin-top: 3%;">
+                <div class="card w-75" style="margin-bottom: 30px; background-color: #CED4D9;">
+                    <div class="d-flex flex-row justify-content-between p-3 adiv text-white"></div>
+                    <form method="post" action="{{ route('create_mood') }}" >
+                        {{ csrf_field() }}
+                        <div class="mt-2 p-4 text-center">
+                            <h1 class="fw-bolder">Mood Tracking System</h1>
+                            <h4>Tracking your Mood Every Single Day</h4> 
+                            <p style="font-size: 14px; margin-top: 1%;">Let us know about how you feel today.</p>
+                            <!-- <div class="d-flex flex-row justify-content-center mt-2"> <img src="https://img.icons8.com/emoji/48/000000/angry-face-emoji--v2.png" /> <img src="https://img.icons8.com/fluent/48/000000/sad.png" /> <img src="https://img.icons8.com/color/48/000000/happy.png" /> <img src="https://img.icons8.com/emoji/48/000000/smiling-face.png" /> <img src="https://img.icons8.com/color/48/000000/lol.png" /> </div> -->
+                            
+                            <div class="form-group mt-4"> 
+                                <input class="form-control" type="text" name="nama" placeholder="Full Name" maxlength="100"/> 
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <p style="font-size: 14px;">What do u feel today?</p>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_0" type="radio" class="custom-control-input" value="Sad"> 
+                                    <label for="radio_0" class="custom-control-label">Sad</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_1" type="radio" class="custom-control-input" value="Grateful"> 
+                                    <label for="radio_1" class="custom-control-label">Grateful</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_2" type="radio" class="custom-control-input" value="Happy"> 
+                                    <label for="radio_2" class="custom-control-label">Happy</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_3" type="radio" class="custom-control-input" value="Anxious"> 
+                                    <label for="radio_3" class="custom-control-label">Anxious</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input name="radio" id="radio_4" type="radio" class="custom-control-input" value="Stress"> 
+                                    <label for="radio_4" class="custom-control-label">Stress</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-4"> 
+                                <textarea class="form-control" name="note" rows="4" placeholder="Write a note"></textarea> 
+                            </div>
+
+                            <div class="form=group mt-4"> 
+                                <button type="submit" class="btn btn-primary btn-block"><span>Save Today's Mood</span></button> 
+                            </div>
+                                
+                            <div class="text-center fs-6" style="margin-top: 10px;">
+                                Read your journal <a href="mts"> click here</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Page Content-->
+            <section>
             <div class="row justify-content-center" style="margin-top:5%">
                 <div class="col-3">
                     <div class="text-center mb-5">
@@ -90,6 +149,7 @@
             <!--  -->           
             </section>
         </main>
+
         <!-- Footer-->
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
