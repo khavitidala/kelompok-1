@@ -104,7 +104,7 @@
                 <div class="card card-info card-outline">
                     <div class="card-header">
                         <div class="card-tools">
-                            <a href="/" class="btn btn-success">kembali <i class="fas fa-plus-square"></i></a><!--ganti simbol-->
+                            <a href="consulRecord" class="btn btn-success">kembali <i class="fas fa-plus-square"></i></a><!--ganti simbol-->
                         </div>
                     </div>
 
