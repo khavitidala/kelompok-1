@@ -43,3 +43,6 @@ Route::delete('/profile_konselor/delete/{id}',"App\Http\Controllers\AdminControl
 Route::put('/profile_pasien/{id}',"App\Http\Controllers\PasienController@update")->name("update_pasien");
 Route::put('/profile_konselor/{id}',"App\Http\Controllers\KonselorController@update")->name("update_konselor");
 
+Route::get('/mts',"App\Http\Controllers\MoodTrackingController@index")->name("mts");
+Route::post('/create_mood',"App\Http\Controllers\MoodTrackingController@store")->name("create_mood");
+
