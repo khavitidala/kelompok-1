@@ -20,9 +20,10 @@
         <script>
             $(document).ready(function() {
                 var request;
-
+                var page = Math.floor(Math.random() * (5 - 1)) + 1
+                var url_ = "http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=b2d3b1c264c147ae88dba39998c23279&pageSize=3&page="
                 request = $.ajax({
-                        url: "news",
+                        url: url_+page,
                         type: "get"
                     });
 
@@ -63,11 +64,11 @@
                 });
 
                 $("#register").on('click', function(event){
-
+                    var page = Math.floor(Math.random() * (5 - 1)) + 1
                     event.preventDefault();
 
                     request = $.ajax({
-                        url: "news",
+                        url: url_+page,
                         type: "get"
                     });
 
