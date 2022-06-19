@@ -45,6 +45,10 @@ class AkunController extends Controller
         return view('consulRecord_create');
     }
 
+    public function food_rec() {
+        return view('food_recommendation');
+    }
+
     public function register()
     {
         return view('register', [

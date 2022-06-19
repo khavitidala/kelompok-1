@@ -6,11 +6,11 @@ from sklearn.neighbors import NearestNeighbors
 
 NUT_DAILY_VALUES = {
     "calories": (71.461, 477.044),
-    "carbohydrates": (82.22, 0.43),
-    "proteins": (36.36, 0.333),
-    "fat" : (27.59333333, 0.798),
-    "fiber": (18.33333333, 0),
-    "cholestrol": (0.761, 0),
+    "carbohydrates": (0.43, 82.22),
+    "proteins": (0.333, 36.36),
+    "fat" : (0.798, 27.59333333),
+    "fiber": (0, 18.33333333),
+    "cholestrol": (0, 0.761),
 }
 
 NUT_NAMES_MAP = {

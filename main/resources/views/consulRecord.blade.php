@@ -34,6 +34,7 @@
                             <li class="nav-item"><a class="nav-link" href="about">Tentang Kami</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact">Feedback</a></li>
                             <li class="nav-item"><a class="nav-link" href="profile">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="food">AI Food Recommendation</a></li>
                         </ul>
                     </div>
                     <a href="logout" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span>Logout</a>
