@@ -27,6 +27,7 @@
                             <li class="nav-item"><a class="nav-link" href="about">Tentang Kami</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact">Feedback</a></li>
                             <li class="nav-item"><a class="nav-link" href="profile">Profile</a></li>
+                            <li class="nav-item"><a class="nav-link" href="chat">Konselor</a></li>
                         </ul>
                     </div>
                     <a href="login" class="appointment-btn scrollto"><span class="d-none d-md-inline"></span> Sign In</a>
@@ -60,7 +61,9 @@
                                     </div>
                                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                                     <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+                                    </div>
                                 </form>
                                 <div class="text-center fs-6" style="margin-top: 10px;">
                                     Doesn't have an Account? <a href="register">Register</a>

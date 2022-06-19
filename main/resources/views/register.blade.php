@@ -64,6 +64,12 @@
                                         <label for="username">Username</label>
                                         <div class="invalid-feedback">Username is required.</div>
                                     </div>
+                                    <!-- SSO Username input-->
+                                    <div class="form-floating mb-3">
+                                        <input class="form-control" id="email" name="email" type="email" placeholder="Email"/>
+                                        <label for="email">Email</label>
+                                        <div class="invalid-feedback">Email is required.</div>
+                                    </div>
                                     <!-- Password input-->
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="password" name="password" type="password" placeholder="Password" />

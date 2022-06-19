@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Models\Akun;
 use App\Models\Pasien;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Providers\RouteServiceProvider;
+
 
 class AkunController extends Controller
 {
@@ -26,11 +34,19 @@ class AkunController extends Controller
     }
 
     public function chat() {
-        return redirect('login');
+        return redirect('chat');
     }
 
     public function faq() {
         return view('faq');
+    }
+
+    public function obatPricing() {
+        return view('obatPricing');
+    }
+  
+    public function obatCheckout() {
+        return view('obatCheckout');
     }
 
     public function create_record() {
@@ -61,6 +77,7 @@ class AkunController extends Controller
         $ksr = new Akun;
         $ksr->username = $request->username;
         $ksr->password = $request->password;
+        $ksr->email = $request->email;
         $ksr->is_admin = 0;
         $ksr->is_konselor = 0;
         $ksr->save();
@@ -68,21 +85,31 @@ class AkunController extends Controller
         $pas = new Pasien;
         $pas->akun_id = $ksr->akun_id; 
         $pas->nama = $request->nama;
+        $pas->email = $request->email;
         $pas->nomor_induk = $request->nomor_induk;
         $pas->save();
 
         return redirect('login')->with('msg', 'Tambah akun berhasil');
     }
 
-    public function index(){
+    public function login(){
         
         return view('login');
-        // return view('login', [
-        //     'title' => 'Login',
-        //     'method' => 'POST',
-        //     'action' => "loginpost"
-        //     ]);
     }
+
+    public function index(){
+        
+        return view('home');
+    }
+
+    public function put_session($data) {
+        Session::put('akun_id',$data->akun_id);
+        Session::put('is_konselor',$data->is_konselor);
+        Session::put('is_admin',$data->is_admin);
+        Session::put('login',TRUE);
+    }
+
+    use AuthenticatesUsers;
 
     public function loginPost(Request $request){
         $username = $request->username;
@@ -90,16 +117,14 @@ class AkunController extends Controller
         $data = Akun::where('username','=',$username)->first();
         if($data){ 
             if(strcmp($password,$data->password)==0){
-                Session::put('akun_id',$data->akun_id);
-                Session::put('is_konselor',$data->is_konselor);
-                Session::put('is_admin',$data->is_admin);
-                Session::put('login',TRUE);
+                $this->put_session($data);
                 if($data->is_konselor){
                     return redirect('consulRecord');
                 } else if($data->is_admin){
                     return redirect('admin');
                 } else {
-                    return redirect('consulRecord');
+                    $this->middleware('auth');
+                    return redirect('chat');
                 }
                 return redirect('admin');
                 

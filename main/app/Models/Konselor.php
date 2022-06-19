@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Konselor extends Model
 {
     use HasFactory;
-    protected $table = 'konselor';
-    protected $primaryKey = 'konselor_id';
+    protected $table = 'users';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 }

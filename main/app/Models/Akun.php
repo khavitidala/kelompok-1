@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Akun extends Model
 {
     use HasFactory;
-    protected $table = 'akun';
-    protected $primaryKey = 'akun_id';
+    protected $table = 'users';
+    protected $primaryKey = 'id';
     public $timestamps = false;
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 }

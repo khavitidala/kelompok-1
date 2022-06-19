@@ -12,14 +12,14 @@ class AdminController extends Controller
     public function index()
     {
         if(!Session::get('login')){
-            return redirect('login')->with('alert','Anda belum login, silahkan login terlebih dahulu');
+            return redirect('home')->with('alert','Anda belum login, silahkan login terlebih dahulu');
         } else {
             if(Session::get('is_admin')) {
                 $pasien = Pasien::get();
                 $konselor = Konselor::get();
                 return view('admin', ['pasien' => $pasien, 'konselor' => $konselor]);
             } else {
-                return redirect('login')->with('alert','Akses hanya diperuntukkan untuk admin!');
+                return redirect('home')->with('alert','Akses hanya diperuntukkan untuk admin!');
             }
         }      
     }

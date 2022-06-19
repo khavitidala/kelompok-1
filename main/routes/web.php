@@ -12,15 +12,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/chat', [App\Http\Controllers\ChatsController::class, 'index']);
+Route::get('/messages', [App\Http\Controllers\ChatsController::class, 'fetchMessages']);
+Route::post('/messages', [App\Http\Controllers\ChatsController::class, 'sendMessage']);
+
 Route::get('/',"App\Http\Controllers\AkunController@beranda")->name("beranda");
 Route::get('/index',"App\Http\Controllers\AkunController@beranda")->name("beranda");
-Route::get('/login',"App\Http\Controllers\AkunController@index")->name("login");
+Route::get('/login',"App\Http\Controllers\AkunController@login")->name("login");
 Route::get('/register',"App\Http\Controllers\AkunController@register")->name("register");
 Route::get('/about',"App\Http\Controllers\AkunController@about")->name("about");
 Route::get('/contact',"App\Http\Controllers\AkunController@contact")->name("contact");
 Route::get('/news',"App\Http\Controllers\AkunController@getNews")->name("getNews");
-Route::get('/chat',"App\Http\Controllers\AkunController@chat")->name("chat");
+//Route::get('/chat',"App\Http\Controllers\AkunController@chat")->name("chat");
 Route::get('/faq',"App\Http\Controllers\AkunController@about")->name("faq");
+Route::get('/obatPricing',"App\Http\Controllers\AkunController@obatPricing")->name("obatPricing");
+Route::get('/obatCheckout',"App\Http\Controllers\AkunController@obatCheckout")->name("obatCheckout");
 Route::get('/consulRecord/create',"App\Http\Controllers\AkunController@create_record")->name("create_record");
 Route::get('/consulRecord',"App\Http\Controllers\KonsultasiRecordController@index")->name("consulRecord");
 Route::post('/consulRecord',"App\Http\Controllers\KonsultasiRecordController@store")->name("store_consulRecord");
@@ -41,3 +50,5 @@ Route::delete('/profile_konselor/delete/{id}',"App\Http\Controllers\AdminControl
 Route::put('/profile_pasien/{id}',"App\Http\Controllers\PasienController@update")->name("update_pasien");
 Route::put('/profile_konselor/{id}',"App\Http\Controllers\KonselorController@update")->name("update_konselor");
 
+Route::get('/mts',"App\Http\Controllers\MoodTrackingController@index")->name("mts");
+Route::post('/create_mood',"App\Http\Controllers\MoodTrackingController@store")->name("create_mood");
