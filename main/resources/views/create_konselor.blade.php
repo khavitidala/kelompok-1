@@ -33,6 +33,10 @@
               <h2>Create Konselor</h2>
             <form method="post" action="{{ url('/profile_konselor') }}">
               @csrf
+              <div class="form-group">
+                    <label for="akun_id">Akun ID</label>
+                    <input type="text" class="form-control" id="akun_id" name="akun_id">
+                </div>
                 <div class="form-group">
                     <label for="nama">Nama Lengkap</label>
                     <input type="text" class="form-control" id="nama" name="nama">
@@ -56,7 +60,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
-              <a href="admin"><button class="btn btn-secondary mt-2">Back</button></a>
+              <a href="/admin"><button class="btn btn-secondary mt-2">Back</button></a>
           </div>
       </div>
     
