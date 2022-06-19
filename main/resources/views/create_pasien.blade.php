@@ -34,7 +34,7 @@
             <form method='POST' action="/profile_pasien">
               @csrf
             <div class="form-group">
-                    <label for="nama">Akun ID</label>
+                    <label for="akun_id">Akun ID</label>
                     <input type="text" class="form-control" name="akun_id">
                 </div>
                 <div class="form-group">
